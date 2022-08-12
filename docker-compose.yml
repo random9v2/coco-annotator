@@ -13,10 +13,10 @@ services:
     container_name: annotator_webclient
     restart: always
     ports:
-      - "5000:5000"
+      - "5001:5000"  # macOS Airplay uses 5000
     environment:
       - SECRET_KEY=RandomSecretKeyHere
-      - FILE_WATCHER=true
+#      - FILE_WATCHER=true  # error on macOS
     volumes:
       - "./datasets:/datasets"
       - "./models:/models"
